@@ -9,7 +9,5 @@ permalink: /:title/
 traducciones: ['en','es']
 
 tags: [anki]
-no_search: true
-comments: true
 
 ---

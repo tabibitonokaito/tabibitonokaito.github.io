@@ -42,13 +42,16 @@ for(contenedor = 0; contenedor<contenedores_imagenes.length; contenedor++){
     }
 
     dp_oculto.onclick = function() {
-      dp_img2.className += " out";
-      if(dp_cap){dp_cap.className += " out";}
+      dp_oculto.className += " out"
+      /*dp_img2.className += " out";
+      if(dp_cap){dp_cap.className += " out";}*/
       setTimeout(function() {
           dp_oculto.style.display = "none";
-          dp_img2.className = "dp_img2";
-          if(dp_cap){dp_cap.className += "dp_cap";}
+          dp_oculto.className = "dp_oculto"
+
+          /*dp_img2.className = "dp_img2";
+          if(dp_cap){dp_cap.className += "dp_cap";}*/
       }, 500);
-    } 
+    }
   }
 }

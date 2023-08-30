@@ -1,0 +1,90 @@
+{% assign post_destino = post %}
+{% assign mostrar_idiomas_alternativos = false %}
+
+{% if post_destino.categories[0] == "placeholder" %}
+  <!-- si es un placeholder no puede ser el idioma por defecto de la página, asi que cogemos todos menos ese -->
+  {% include custom/traducciones_disponibles.html page_idioma=site.language page_traducciones=post.traducciones %}
+
+  <!-- si existe la version del articulo del idioma que se esta visualizando, aplicarlo sino dejar [0] -->
+  {% assign idioma_destino = traducciones_disponibles[0] %}
+  {% for idioma in traducciones_disponibles %}
+    {% if idioma == idioma_preferido %}
+      {% assign idioma_destino = idioma %}
+    {% endif %}
+  {% endfor %}
+
+  <!-- si hay más de un idioma hay que crear un array con idiomas alternativos -->
+  {% assign idiomas_alternativos = "" %}
+  {% for idioma in traducciones_disponibles %}
+    {% unless idioma == idioma_destino %}
+      {% assign idiomas_alternativos = idiomas_alternativos | append: idioma %}
+      {% unless forloop.last %}
+        {% assign idiomas_alternativos = idiomas_alternativos | append: '/' %}
+      {% endunless %}
+    {% endunless -%}
+  {% endfor %}
+  {% assign idiomas_alternativos = idiomas_alternativos | split: '/' %}
+
+  <!-- generamos urls para destino y alternativos si los hay-->
+  {% include custom/base_url.html page_url=post.url %}
+  {% include custom/generar_url.html base_url=base_url idioma=idioma_destino  %}
+  {% assign url_idioma_destino = url %}
+
+  {% assign url_idiomas_alternativos = "" %}
+  {% for idioma in idiomas_alternativos %}
+    {% include custom/base_url.html page_url=post.url %}
+    {% include custom/generar_url.html base_url=base_url idioma=idioma  %}
+    {% assign url_idiomas_alternativos = url_idiomas_alternativos | append: url %}
+    {% unless forloop.last %}
+      {% assign url_idiomas_alternativos = url_idiomas_alternativos | append: url | append: '|' %}
+    {% endunless %}
+  {% endfor %}
+  {% assign url_idiomas_alternativos = url_idiomas_alternativos | split: '|' %}
+
+  <!-- obtenemos el post de destino y lo asignamos a post_destino -->
+  {% assign categoria_destino = "posts_" | append: idioma_destino %}
+  {% include custom/encontrar_post.html url_a_encontrar=url_idioma_destino categoria=categoria_destino %}
+
+  {% if page.categories[0] != idioma_destino %}
+    {% assign mostrar_idiomas_alternativos = true %}
+  {% endif %}
+
+
+{% else %}
+  {% if post_destino.traducciones and post_destino.categories[0] != idioma_preferido %}
+  {% assign idiomas_alternativos = traducciones_disponibles %}
+    <!-- hay que intentar reajustar post_destino -->
+
+    <!-- asignamos la primera opcion de idioma posible pero buscamos la de idioma_preferido-->
+    {% assign idioma_destino = post_destino.traducciones[0] %}
+    {% for idioma in post_destino.traducciones %}
+      {% if idioma == idioma_preferido %}
+        {% assign idioma_destino = idioma %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    <!-- descubrimos que idiomas alternativos hay al que se esta mostrando y los guardamos en traducciones_disponibles-->
+    {% include custom/traducciones_disponibles.html page_idioma=idioma_destino page_traducciones=post_destino.traducciones %}
+
+    <!-- creamos url para los idiomas alternativos-->
+    {% assign url_idiomas_alternativos = "" %}
+    {% for idioma in traducciones_disponibles %}
+      {% include custom/base_url.html page_url=post.url %}
+      {% include custom/generar_url.html base_url=base_url idioma=idioma  %}
+      {% assign url_idiomas_alternativos = url_idiomas_alternativos | append: url %}
+      {% unless forloop.last %}
+        {% assign url_idiomas_alternativos = url_idiomas_alternativos | append: url | append: '|' %}
+      {% endunless %}
+    {% endfor %}
+    {% assign url_idiomas_alternativos = url_idiomas_alternativos | split: '|' %}
+    
+    {% if idiomas_alternativos.size > 0 %}
+      {% assign mostrar_idiomas_alternativos = true %}
+    {% endif %}
+
+    <!-- obtenemos el post de destino y lo asignamos a post_destino -->
+    {% assign categoria_destino = "posts_" | append: idioma_destino %}
+    {% include custom/encontrar_post.html url_a_encontrar=post_destino.url categoria=categoria_destino %}
+  {% endif %}
+{% endif %}

@@ -99,7 +99,7 @@ transform: translateY(-50%);
     }
 }
 
-.dp_img2, .dp_cap{
+.dp_oculto{
     -webkit-animation-name: fade_in;
     -webkit-animation-duration: 0.6s;
     animation-name: fade_in;

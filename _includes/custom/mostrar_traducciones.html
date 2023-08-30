@@ -1,0 +1,27 @@
+{%- if page.traducciones.size > 0 -%}
+    <!-- obtener base url (url: sin la parte del idioma) -->
+    {%- include custom/base_url.html page_url=page.url -%}
+
+    <!-- obtiene las traducciones disponibles, creando un array sin el idioma propio -->
+    {%- assign idioma = page.categories[0] -%}
+    {%- include custom/traducciones_disponibles.html page_idioma=idioma page_traducciones=page.traducciones -%}
+
+    {%- if traducciones_disponibles -%}
+        <div class="box-note">
+        {%- if include.display -%}
+            {{include.display}}
+        {%- else -%}
+            (error: no has especificado un texto de display al importar mostrar_traducciones):
+        {%- endif -%}
+        
+        {%- for idioma in traducciones_disponibles -%}
+
+            {%- include custom/generar_url.html base_url=base_url idioma=idioma  -%}
+            {%- include custom/generar_idioma_label.html idioma=idioma  -%}
+            
+            <a href="{{url}}">{{idioma_label}}</a>
+            {%- if forloop.last -%}{%- else -%}・{%- endif -%}
+        {%- endfor -%}
+        </div>
+    {%- endif -%}
+{%- endif -%}

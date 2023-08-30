@@ -1,0 +1,9 @@
+{% assign idioma_label = "???" %}
+{% assign end = site.idiomas_disponibles.size | minus: 1 %}
+{%- for i in (0..end) -%}
+    {%- if include.idioma == site.idiomas_disponibles[i] -%}
+        {% assign idioma_label = site.etiquetas_idiomas[i] %}
+        {% break %}
+    {%- else -%}
+    {%- endif -%}
+{%- endfor -%}

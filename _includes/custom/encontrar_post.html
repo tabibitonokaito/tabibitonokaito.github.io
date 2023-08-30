@@ -1,0 +1,7 @@
+<!-- obtenemos el post de destino -->
+{% for item in site[include.categoria] %}
+    {% if include.url_a_encontrar == item.url %}
+        {% assign post_destino = item %}
+        {% break %}
+    {% endif %}
+{% endfor %}

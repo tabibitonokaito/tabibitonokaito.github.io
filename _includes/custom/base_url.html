@@ -1,0 +1,18 @@
+
+<!-- obtenemos base_url (de la públicación que estamos viendo) -->
+{%- assign base_url = include.page_url -%}
+
+{%- if base_url != "/" -%}
+    {%- if page.categories -%}
+        {%- assign url_parts = base_url | split: "/" -%}
+        {%- for idioma in site.idiomas_disponibles -%}
+            {%- if url_parts[1] == idioma -%}
+                {%- capture base_url -%}
+                    {%- for i in url_parts -%}
+                        {%- if i != "" and i != idioma -%}{{i}}/{%- endif -%}
+                    {%- endfor -%}
+                {%- endcapture -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endif -%}

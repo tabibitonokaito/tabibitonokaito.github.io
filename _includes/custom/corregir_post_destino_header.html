@@ -1,0 +1,11 @@
+{%- assign idioma_preferido = site.language -%}
+{% assign array_navlink = page.url | split: '/' %}
+{% if array_navlink.size > 0 %} <!-- si hay 0 elementos es que estamos en index -->
+    <!-- si array_navlink[1] es un idioma entonces no es el idioma original de la página  -->
+    {% for idioma in site.idiomas_disponibles%}
+        {% if array_navlink[1] == idioma %}
+            {% assign idioma_preferido = idioma %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% endif %}

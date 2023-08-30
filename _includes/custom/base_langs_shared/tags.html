@@ -1,0 +1,51 @@
+{% include custom/corregir_post_destino_header.html %}
+
+<!-- creamos tag_list: contiene todos los tags -->
+{%- assign tags_list = "" -%}
+{% for collection in site.collections %}
+    {% for item in site[collection.label] %}
+        {% if item.categories[0] == 'placeholder' %}
+            {% continue %}
+        {% endif %}
+        {% for tag in item.tags %}
+            {%- assign tags_list = tags_list | append: ',' | append: tag | strip -%}
+        {% endfor%}
+    {% endfor %}
+{% endfor %}
+{%- assign tags_list = tags_list | remove_first: "," | split: ',' | uniq -%}
+
+{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+
+{%- for tag in tags_list -%}
+    <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
+{%- endfor -%}
+
+
+<div id="full-tags-list">
+    {%- for tag in tags_list -%}
+        <h2 id="{{- tag -}}" class="linked-section">
+            <i class="fas fa-tag" aria-hidden="true"></i>
+            &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
+        </h2>
+        <div class="post-list">
+            {%- for post in site.tags[tag] -%}
+                {% include custom/corregir_post_destino_insider.html %}
+                <div class="tag-entry">
+                    <a href="{{ post_destino.url | relative_url }}">{{- post_destino.title | strip_html -}}</a>{% if post_destino.categories[0] != idioma_preferido %} ({{post_destino.categories[0]}}){% endif %}
+                    <div class="entry-date">
+                        <time datetime="{{- post_destino.date | date_to_xmlschema -}}">{{- post_destino.date | date: date_format -}}</time>
+                        {% if mostrar_idiomas_alternativos %}
+                            | Other avaliable languages:  
+                            {% assign end = idiomas_alternativos.size | minus: 1 %}
+                            {% for i in (0..end) %}
+                                <a style="font-size: 100%;" href="{{url_idiomas_alternativos[i]}}">{{idiomas_alternativos[i]}}</a>
+                                {% unless forloop.last %} |{% endunless %}
+                            {% endfor %}
+                        </br>
+                        {% endif %}
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+    {%- endfor -%}
+</div>

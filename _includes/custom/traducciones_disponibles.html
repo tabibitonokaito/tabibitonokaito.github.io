@@ -1,0 +1,9 @@
+<!-- obtiene las traducciones disponibles, creando un array sin el idioma propio -->
+{%- assign traducciones_disponibles = null -%}
+{%- for idioma in include.page_traducciones -%}
+    {%- if idioma == include.page_idioma -%}
+        {%- continue -%}
+    {%- endif -%}
+    {%- assign traducciones_disponibles = traducciones_disponibles | append: ',' | append: idioma -%}
+{%- endfor -%}
+{%- assign traducciones_disponibles = traducciones_disponibles | remove_first: ',' | split: ',' -%}

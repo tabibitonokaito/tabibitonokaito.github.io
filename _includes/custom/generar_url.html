@@ -1,0 +1,20 @@
+{%- assign url = "" -%}
+{%- if base_url == "" -%}
+    {%- if include.idioma == site.language -%}
+        {%- assign url = '' | absolute_url -%}
+    {%- else -%}
+        {%- assign url = include.idioma | absolute_url -%}
+    {%- endif -%}
+{%- else -%}
+    {%- assign primer_caracter = base_url | slice: 0 -%}
+    {%- if primer_caracter != "/" -%}
+        {%- assign url =  "/" | append: base_url  -%}
+    {%- else -%}
+        {%- assign url = base_url -%}
+    {%- endif -%}
+    {% if include.idioma == site.language %}
+        {%- assign url = url | relative_url -%}
+    {% else %}
+        {%- assign url = include.idioma | append: url | relative_url -%}
+    {% endif %}
+{%- endif -%}

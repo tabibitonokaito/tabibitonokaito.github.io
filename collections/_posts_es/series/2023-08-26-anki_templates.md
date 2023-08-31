@@ -60,7 +60,7 @@ En esta sección explico las características que tienen todas las plantillas pa
 Lo primero que nos vamos a encontar es que tiene un montón de campos, puede marear al principio si no estás acostumbrado pero
 es muy probable que llegue el día en el que necesites cada uno de ellos.
 
-![Son un montón!](/assets/img/posts/anki_templates/campos.avif#center){: .mx-auto.d-block :}
+![](/assets/img/posts/anki_templates/campos.avif#center){: .mx-auto.d-block.no_zoom :}
 
 Yo no uso la mayoría en la mayoría de mis tarjetas pero de vez en cuando necesito o me gusta agregar alguna información extra.
 Siempre podeis reordenar los campos u ocultarlos para que no molesten o dejarlos a vuestro gusto.
@@ -154,4 +154,4 @@ Si, eso es una imagen. Como detalle la mayoría de las páginas web si son blanc
 **Nota** el div blur tiene estilos para ser un elemento en linea, es decir: si pones varios div juntos se verán uno a la derecha del otro a menos que no quepan más.
 Si quieres aplicar separarlos por lineas agrega un \<br\>\.
 
-![Efecto de Blur](/assets/img/posts/anki_templates/blur_gif.gif)
+![Funcion de Blur](/assets/img/posts/anki_templates/blur_gif.gif)

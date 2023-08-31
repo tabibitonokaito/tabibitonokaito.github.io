@@ -113,7 +113,7 @@ for(c=0; c<dp_contenedores.length; c++){
 
 
   dp_img.addEventListener('click', (e) => {
-    dp_oculto.style.display = "block";
+    dp_oculto.style.display = "flex";
   })
 
   dp_oculto.addEventListener('click', (e) => {

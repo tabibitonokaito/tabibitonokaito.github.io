@@ -45,7 +45,7 @@
   {% assign categoria_destino = "posts_" | append: idioma_destino %}
   {% include custom/encontrar_post.html url_a_encontrar=url_idioma_destino categoria=categoria_destino %}
 
-  {% if page.categories[0] != idioma_destino %}
+  {% if page.categories[0] != idioma_destino and idiomas_alternativos.size > 0 %}
     {% assign mostrar_idiomas_alternativos = true %}
   {% endif %}
 
@@ -80,7 +80,7 @@
     {% assign url_idiomas_alternativos = url_idiomas_alternativos | split: '|' %}
     
     {% if idiomas_alternativos.size > 0 %}
-      {% assign mostrar_idiomas_alternativos = true %}
+      {% assign idiomas_alternativos = true %}
     {% endif %}
 
     <!-- obtenemos el post de destino y lo asignamos a post_destino -->
@@ -88,3 +88,15 @@
     {% include custom/encontrar_post.html url_a_encontrar=post_destino.url categoria=categoria_destino %}
   {% endif %}
 {% endif %}
+
+{% assign label_idiomas_alternativos = "" %}
+{% for idioma in idiomas_alternativos %}
+  {%- include custom/generar_idioma_label.html idioma=idioma  -%}
+
+  {% assign label_idiomas_alternativos = label_idiomas_alternativos | append: idioma_label %}
+  {% unless forloop.last %}
+    {% assign label_idiomas_alternativos = label_idiomas_alternativos | append: ',' %}
+  {% endunless %}
+
+  {% assign label_idiomas_alternativos = label_idiomas_alternativos | split: ',' %}
+{% endfor %}

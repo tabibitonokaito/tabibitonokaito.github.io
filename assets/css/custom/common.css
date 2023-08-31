@@ -1,15 +1,87 @@
+/* continuaciones */
+.custom_continuacion{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+.custom_continuacion a{
+    text-align: center;
+    color: #2980b9;
+    border: 1px solid #2980b9;
+    background: #def9ff;
+    padding: 20px;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.custom_continuacion a:hover{
+    text-decoration: none;
+    color: #2980b9;
+    filter: brightness(110%);
+}
+
+.custom_continuacion a.sz_50{
+    width: calc(50% - 5px);
+}
+
+.custom_continuacion a.sz_100{
+    width: 100%;
+}
+
+.custom_continuacion a.return{
+    background: #6faee9;
+    color: #0b4164; 
+}
+
+/* sin ordenar */
+.small_gallery{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    /* gap: 10px; */
+    /* row-gap: 10px; */
+    margin: 1.875rem 0;
+}
+.dp_50{
+    flex: 0 0 48%;
+}
+.dp_33{
+    flex: 0 0 31.333333%;
+}
+
+.box-blue {
+  padding: 0.9375rem 0.9375rem 0.9375rem 0.625rem;
+  margin: 1.25rem 1.25rem 1.25rem 0.3125rem;
+  border: 1px solid #eee;
+  border-left-width: 0.3125rem;
+  border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;
+}
+
+.box-blue {
+  background-color: #d5eeff;
+  border-left-color: #2980b9;
+}
+
 /* kustom */
 .centrar_vertical{
     position: relative;
+    display: flex;
+    align-items: center;
     height: 500px;
 }
 
 .centrar_vertical div.centrar_este {
 margin: 0;
+min-width: 100%;
 position: absolute;
 top: 50%;
--ms-transform: translateY(-50%);
-transform: translateY(-50%);
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+
+text-align: center;
 }
   
 .background_header{
@@ -54,16 +126,26 @@ transform: translateY(-50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.826);
-    z-index: 1031; /* Sit on top */
+    z-index: 1035; /* Sit on top */
     overflow: auto; /* Enable scroll if needed */
 }
 
+.dp_cap{
+    z-index: 1035; /* Sit on top */
+    cursor:auto;
+}
+
+.dp_img{
+    transition:opacity 0.5s;
+}
+
 .dp_img:hover {
-    opacity: 0.7;
+    opacity: 0.9;
     cursor: pointer;
 }
 
 .dp_agrupador{
+    z-index: 1034;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -104,6 +186,8 @@ transform: translateY(-50%);
     -webkit-animation-duration: 0.6s;
     animation-name: fade_in;
     animation-duration: 0.6s;
+    z-index: 1033;
+    cursor: pointer;
 }
 
 .out {

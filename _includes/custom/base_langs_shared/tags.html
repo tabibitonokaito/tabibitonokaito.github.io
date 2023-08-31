@@ -38,7 +38,7 @@
                             | Other avaliable languages:  
                             {% assign end = idiomas_alternativos.size | minus: 1 %}
                             {% for i in (0..end) %}
-                                <a style="font-size: 100%;" href="{{url_idiomas_alternativos[i]}}">{{idiomas_alternativos[i]}}</a>
+                                <a style="font-size: 100%;" href="{{url_idiomas_alternativos[i]}}">{{label_idiomas_alternativos[i]}}</a>
                                 {% unless forloop.last %} |{% endunless %}
                             {% endfor %}
                         </br>

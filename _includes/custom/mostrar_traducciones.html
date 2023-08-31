@@ -6,7 +6,7 @@
     {%- assign idioma = page.categories[0] -%}
     {%- include custom/traducciones_disponibles.html page_idioma=idioma page_traducciones=page.traducciones -%}
 
-    {%- if traducciones_disponibles -%}
+    {%- if traducciones_disponibles.size > 0 -%}
         <div class="box-note">
         {%- if include.display -%}
             {{include.display}}

@@ -66,40 +66,56 @@ layout: base
         {% include social-share.html %}
       {% endif %}
 
+      {% if page.series %}
+        {% include custom/series_next_post.html %}
+      {% endif %}
+
       <ul class="pagination blog-pager">
-        <!-- quitar placeholders de anterior -->
+        <!-- quitar posts que no queremos ver de anterior -->
         {% assign anterior = page.previous %}
+        
         {% for counter in (0..999) %}
           {% if anterior == null %}
             {% break %}
           {% endif %}
-          {% if anterior.categories[0] != "placeholder" %}
-            {% break %}
+          {% if anterior.categories[0] == "placeholder" %}
+            {% assign anterior = anterior.previous %}
+            {% continue %}
           {% endif %}
-          {% assign anterior = anterior.previous %}
+          {% if page.series and anterior.series %}
+            {% assign anterior = anterior.previous %}
+            {% continue %}
+          {% endif %}
         {% endfor %}
 
         {% if anterior.url %}
         <li class="page-item previous">
-          <a class="page-link" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title | strip_html | xml_escape}}">&larr; Previous Post</a>
+          <a class="page-link" href="{{ anterior.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{anterior.title | strip_html | xml_escape}}">&larr; Previous Post</a>
         </li>
         {% endif %}
-        
-        <!-- quitar placeholders de siguiente -->
+
+
+        <!-- quitar posts que no queremos ver de siguiente -->
         {% assign siguiente = page.next %}
         {% for counter in (0..999) %}
           {% if siguiente == null %}
             {% break %}
           {% endif %}
-          {% if siguiente.categories[0] != "placeholder" %}
-            {% break %}
+          
+          {% if siguiente.categories[0] == "placeholder" %}
+            {% assign siguiente = siguiente.next %}
+            {% continue %}
           {% endif %}
-          {% assign siguiente = siguiente.next %}
+
+          {% if page.series and siguiente.series %}
+            {% assign siguiente = siguiente.next %}
+            {% continue %}
+          {% endif %}
         {% endfor %}
 
         {% if siguiente.url %}
         <li class="page-item next">
-          <a class="page-link" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title | strip_html | xml_escape}}">Next Post &rarr;</a>
+          <a class="page-link" href="{{ siguiente.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{siguiente.title | strip_html | xml_escape}}">Next Post &rarr;</a>
         </li>
         {% endif %}
       </ul>

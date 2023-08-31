@@ -1,0 +1,131 @@
+
+
+{% assign hay_anterior = false %}
+{% assign hay_siguiente = false %}
+
+{% if page.series %}
+    {% if page.series[0] > 1 %}
+        {% assign hay_anterior = true %}
+    {% endif %}
+    {% assign n_sig = page.series[0] | plus: 1 %}
+    {% if n_sig <= page.series[1] %}
+        {% assign hay_siguiente = true %}
+    {% endif %}
+{% endif %}
+
+<!-- obtenemos la url original para poder crear los enlaces a la siguiente y anterior parte facilmente-->
+{% assign url_primer_post = page.url %}
+{% if page.series[0] != 1 %}
+    {% assign longitud = 0 %}
+    {% assign numero = page.series[0] %}
+    {% for i in (0..10) %}
+        {% assign numero = numero | divided_by: 10 %}
+        {% assign longitud = longitud | plus: 1 %}
+        {% if numero == 0 %}
+            {% break %}
+        {% endif%}
+    {% endfor %}
+
+    {% assign caracteres_sobrantes = longitud | plus: 1 %}
+    {% assign ultimo_indice = url_primer_post.size | minus: caracteres_sobrantes %}
+    {% assign url_primer_post = page.url | slice: 0,ultimo_indice | append: '/' %}
+{% endif %}
+
+<!-- obtenemos el primer_post también -->
+{% assign categoria = "posts" %}
+{% assign primer_post = null %}
+{% if page.categories[0] != site.language %}
+    {% assign categoria = categoria | append: '_' | append: page.categories[0] %}
+{% endif %}
+{% for item in site[categoria] %}
+    {% if url_primer_post == item.url %}
+        {% assign primer_post = item %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+
+<!-- si hay anterior obtenemos la url y este post-->
+{% assign enlace_anterior_parte = "???" %}
+{% assign n_ant = "???" %}
+{% if hay_anterior %}
+    <!-- url por aquí -->
+    {% assign ultimo_indice = url_primer_post.size | minus: 1 %}
+    {% assign n_ant = page.series[0] | minus: 1 %}
+    
+    {% if n_ant == 1 %}
+        {% assign enlace_anterior_parte = url_primer_post %}
+    {% else %}
+        {% assign enlace_anterior_parte = url_primer_post | slice: 0,ultimo_indice | append: n_ant | append: '/' %}
+    {% endif %}
+
+    <!-- post por aquí -->
+    {% assign categoria = "posts" %}
+    {% assign anterior_post = null %}
+
+    {% if page.categories[0] != site.language %}
+        {% assign categoria = categoria | append: '_' | append: page.categories[0] %}
+    {% endif %}
+
+    {% for item in site[categoria] %}
+        {% if enlace_anterior_parte == item.url %}
+            {% assign anterior_post = item %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<!-- si hay siguiente obtenemos la url y este post-->
+{% assign enlace_siguiente_parte = "???" %}
+{% assign n_sig = "??" %}
+{% if hay_siguiente %}
+    <!-- url por aquí -->
+    {% assign ultimo_indice = url_primer_post.size | minus: 1 %}
+    {% assign n_sig = page.series[0] | plus: 1 %}
+
+    {% assign enlace_siguiente_parte = url_primer_post | slice: 0,ultimo_indice | append: n_sig | append: '/' %}
+
+    <!-- post por aquí -->
+    {% assign categoria = "posts" %}
+    {% assign siguiente_post = null %}
+
+    {% if page.categories[0] != site.language %}
+        {% assign categoria = categoria | append: '_' | append: page.categories[0] %}
+    {% endif %}
+
+    {% for item in site[categoria] %}
+        {% if enlace_siguiente_parte == item.url %}
+            {% assign siguiente_post = item %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% assign size = "sz_100" %}
+{% if hay_anterior and hay_siguiente%}
+    {% assign size = "sz_50" %}
+{% elsif page.series[0] == page.series[1] %}
+    {% assign size = "sz_50" %}
+{% endif %}
+<div class="custom_continuacion">
+    {% if hay_anterior %}
+        {% assign label_prev = "Previous Part" %}
+        {% if n_ant == 1 %}
+            {% assign label_prev = "First Part" %}
+        {% endif %}
+        <a class="{{size}}" data-toggle="tooltip" data-placement="top" title="{{anterior_post.title | strip_html | xml_escape}}" href="{{anterior_post.url}}">{{label_prev}}</a>
+    {% endif %}
+
+    {% if hay_siguiente %}
+        {% assign label_next = "Next Part" %}
+        {% if n_sig == page.series[1] %}
+            {% assign label_next = "Last Part" %}
+        {% endif %}
+        <a class="{{size}}" data-toggle="tooltip" data-placement="top" title="{{siguiente_post.title | strip_html | xml_escape}}" href="{{siguiente_post.url}}">{{label_next}}</a>
+    
+    {% endif %}
+
+    {% if page.series[0] == page.series[1] and page.series[1] > 1 %}
+            <a class="{{size}} return" data-toggle="tooltip" data-placement="top" title="{{primer_post.title | strip_html | xml_escape}}" href="{{primer_post.url}}">Return to First Part</a>
+    {% endif %}
+</div>

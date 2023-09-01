@@ -16,5 +16,3 @@ traducciones: ['es']
 tags: [anki]
 
 ---
-
-(Spanish versión is Ready)

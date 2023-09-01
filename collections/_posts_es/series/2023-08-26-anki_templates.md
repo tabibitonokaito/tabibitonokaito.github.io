@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  Plantillas de Anki by Kaito
-subtitle: "Parte 1: Carácteristicas Generales"
+subtitle: Todo lo que necesitas para estudiar Japonés con Anki
 
 cover-img: /assets/img/posts/anki_templates/banner.avif
-thumbnail-img: /assets/img/posts/anki_templates/box.avif
-share-img: /assets/img/posts/anki_templates/box.avif
+thumbnail-img: /assets/img/posts/anki_templates/box.png
+share-img: /assets/img/posts/anki_templates/box.png
 
 categories: ['es']
-traducciones: ['en','es']
+traducciones: ['es']
 series: [1,3]
 
 header_blackbox: true
@@ -18,7 +18,11 @@ comments: false
 
 ---
 
-En este artículo os voy a compartir las plantillas que he creado para estudiar Japonés y son cuatro:
+{: .box-warning}
+**Por revisar:** He sacado este artículo lo más rápidamente posible por lo que no esta revisada la ortografía ni nada, en serio que voy a estar muy ocupado estos días. Nada más que pueda la voy a ir revisando poco a poco, pero al menos ya podeis descargar las plantillas. **Espero que os sean de mucha ayuda**.
+
+
+En este artículo os voy a compartir las plantillas que he creado para estudiar Japonés y son cuatro:a
 **LEER**, **ESCRIBIR**, **DE_KANA** y **A_KANA**.
 
 {: .box-blue}
@@ -115,6 +119,27 @@ Solo quedaría guardar los cambios.
 #### Funciones extendidas
 He incluido a las plantillas algunas caracteristicas muy interesantes que os voy contar a continuación:
 
+* **Botones de accesso rápido** a diversos diccionarios y busqueda de imagenes (para todas las plantillas).
+![Acceso rápido ultra comodo](/assets/img/posts/anki_templates/anki_7yKZ92uKMc.gif)  
+
+Suponiendo que la palabra fuera 瀞 podeis dar click con la rueda del raton a lo siguientes enlaces para saber como funcionarian los botones:
+
+
+* [漢字辞典](https://jitenon.com/search/%E7%80%9E)　(normalmente para kanji) útil para kanken
+* [漢字ペディア](https://www.kanjipedia.jp/search?k=%E7%80%9E&kt=1&wt=1&ky=1&wy=1&sk=partial) (normalmente para kanji) útil para kanken
+* [画像](https://www.google.com/search?tbm=isch&q=%E7%80%9E) busca imagenes
+* [画像とは](https://www.google.com/search?tbm=isch&q=%E7%80%9E%E3%81%A8%E3%81%AF) busca imagenes con とは (enfatiza el significado)
+* [Google](https://www.google.com/search?q=%E7%80%9E%E3%81%A8%E3%81%AF) busca con とは en google (para saber que significa)
+* [NIAI](https://niai.mrahhal.net/similar?q=%E7%80%9E) (normalmente para kanji) útil para kanken
+* [goo](https://dictionary.goo.ne.jp/word/%E7%80%9E/) si te gusta goo puedes acceder directamente a el
+* 単語をコピー: copia la palabra
+* [Jisho](https://jisho.org/search/%E7%80%9E) ya la conoceis
+* [例文](https://www.google.com/search?q=%E7%80%9E%E3%81%AE%E4%BE%8B%E6%96%87) busqueda en google de frases de ejemplo
+
+
+
+
+
 * **Descenso de brillo en las imagenes**: con esto se acabo el problema de coger fotos con fondo blanco ya que no te van a molestar a la vista, la plantilla en si es más o menos blanca pero está más o menos pensada para no afectarte a la vista.
 
 ![Efecto de Brillo](/assets/img/posts/anki_templates/anki_98jCjfLPQG.gif)
@@ -155,3 +180,8 @@ Si, eso es una imagen. Como detalle la mayoría de las páginas web si son blanc
 Si quieres aplicar separarlos por lineas agrega un \<br\>\.
 
 ![Funcion de Blur](/assets/img/posts/anki_templates/blur_gif.gif)
+
+* Funciones que estan medio-incluidas (se instalan a parte de la plantilla pero están configuradas)
+    * **Fuente Principal**: La fuente principal, la de Palabra se verá igual en el móvil (algo más importante de lo que puede parecer). El resto de fuentes depende de tu sistema operativo pero se verán o igual o casi igual.
+
+    * **Fuente para orden de trazos** Si no utilizas addon para crear imagenes con el orden de trazos como el mencionado [Kanji Colorizer (stroke order diagrams)](https://ankiweb.net/shared/info/1964372878) podréis ver aun así el orden de trazos en las tarjetas de tipo LEER y ESCRIBIR.

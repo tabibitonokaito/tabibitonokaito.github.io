@@ -6,7 +6,7 @@ subtitle: placeholder
 categories: ['placeholder']
 permalink: /:title/
 
-traducciones: ['en','es']
+traducciones: ['es']
 tags: [anki]
 
 ---

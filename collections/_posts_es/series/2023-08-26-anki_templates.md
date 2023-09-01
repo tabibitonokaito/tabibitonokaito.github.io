@@ -22,47 +22,44 @@ comments: false
 **Por revisar:** He sacado este artículo lo más rápidamente posible por lo que no esta revisada la ortografía ni nada, en serio que voy a estar muy ocupado estos días. Nada más que pueda la voy a ir revisando poco a poco, pero al menos ya podeis descargar las plantillas. **Espero que os sean de mucha ayuda**.
 
 
-En este artículo os voy a compartir las plantillas que he creado para estudiar Japonés y son cuatro:a
+En este artículo os voy a compartir las plantillas que he creado para estudiar Japonés. Son cuatro en total:
 **LEER**, **ESCRIBIR**, **DE_KANA** y **A_KANA**.
 
 {: .box-blue}
 **Actualizaciones:** Cuando haya actualizaciones o nuevas plantillas utilizaré este cuadro azul para avisar de ello. Si pierdes el enlace a este blog o a este articulo puedes encontrarlo debajo de la plantilla ([ver imagen](/assets/img/posts/anki_templates/footer_sign.avif)).<br><br>
-El texo tiene el mismo color del fondo y no tiene enlaces para no molestarte mientras haces reviews pero deberías de poder seleccionarlo.
+El texo es de el mismo color que el fondo y no tiene enlaces para no molestar durante las reviews pero deberías poder seleccionarlo.
 
-Si quieres acceder directamente a la guía de instalación la encontrarás un poco más abajo.
+A continuación voy a enseñar las carácteristicas de la plantilla pero si quieres puedes pasar directamente a la [siguiente parte](/anki_templates2/) para empezar con la instalación.
 
-## 1. Funciones de las plantillas
-Aunque haya cuatro plantillas eso no significa que se limiten a cuatro funciones así os voy a enseñar
-para que las utilizo y ya vamos viendolas un poco.
+## Funciones de las plantillas
+Aunque haya cuatro plantillas eso no significa que se limiten solo a cuatro funciones, para ejemplificar os voy a enseñar
+como las utilizo yo.
 
 
-* **Vocabulario**<a name="vocabulario"></a>: la útilizo para vocabulario, gramática/expresiones que usen kanji,
+* **LEER**<a name="vocabulario"></a>: la útilizo para vocabulario, gramática/expresiones que usen kanji,
   y para mi deck de kanji sueltos.
 
 ![Tarjeta de Vocabulario](/assets/img/posts/anki_templates/leer1.avif){: .small_image :}
 ![Tarjeta de Gramática/Expresiones .. etc](/assets/img/posts/anki_templates/leer3.avif){: .small_image :}
 ![Tarjeta de Kanji (Kanjis Sueltos)](/assets/img/posts/anki_templates/leer2.avif){: .small_image :}
 
-* **De_Kana**: la útilizo principalmente para gramática, expresiones, vocabulario sin kanji.. etc. Suelen ser tarjetas más dificiles
-  ya que no usan kanji que suelen darte pistas sobre el significado.
+* **DE_KANA**: la útilizo principalmente para gramática, expresiones, vocabulario sin kanji.. etc.
 
 ![Tarjeta DE_KANA](/assets/img/posts/anki_templates/dekana1.avif){: .small_image :}
 
-* **A_Kana**: no la útilizo, Aún así la publico por si llegará a hacer falta a alguien (o a mi).
+* **A_KANA**: no la útilizo, aún así la publico por si llegara a ser necesaria.
 
-![Tarjeta A_KANA: la tarjeta que veis en la foto es solo un ejemplo](/assets/img/posts/anki_templates/akana1.avif){: .small_image :}
-* **Escribir**: esta en principio si que es solo para handwriting. No escribo mucho pero es una tarjeta que me gusta mucho.
+![Tarjeta A_KANA](/assets/img/posts/anki_templates/akana1.avif){: .small_image :}
+* **ESCRIBIR**: esta en principio si que es solo para handwriting. No escribo mucho pero es una tarjeta muy útil.
 
 ![Tarjeta de Handwriting](/assets/img/posts/anki_templates/escribir1.avif){: .small_image :}
 
-## 2. Características Generales
+## Características Generales
+### Campos
 
-En esta sección explico las características que tienen todas las plantillas para después terminar con con sus diferencias.
+Las tarjetas tienen muchos campos así que puede marear al principio si no estás acostumbrado pero es muy probable que llegue el día en el que necesites cada uno de ellos. 
 
-### 2.1 Campos
-
-Lo primero que nos vamos a encontar es que tiene un montón de campos, puede marear al principio si no estás acostumbrado pero
-es muy probable que llegue el día en el que necesites cada uno de ellos.
+Yo por ejemplo intento usar los minimos campos posibles porque rellenar todo requiere tiempo y esfuerzo extra por cada palabra, pero si que me ayudo con ellos cuando lo necesito o simplemente me apetece.
 
 ![](/assets/img/posts/anki_templates/campos.avif#center){: .mx-auto.d-block.no_zoom :}
 
@@ -72,9 +69,13 @@ Siempre podeis reordenar los campos u ocultarlos para que no molesten o dejarlos
 #### Explicación de los campos
 Algunos campos no necesitan explicación porque son literales.
 
-* **Palabra**: Siempre es la palabra pero con unos matices. En LEER, ESCRIBIR sería 漢字, en A_KANA y DE_KANA sería かんじ. 
+* **Palabra**: Siempre es la palabra pero con unos matices. En **LEER** y **ESCRIBIR** sería 漢字, en **A_KANA** y **DE_KANA** sería かんじ. 
     * **¿Por qué en A_KANA y DE_KANA no usas el campo Hiragana?:** Porque así yomichan puede detectar las tarjetas aunque sean de otro tipo de tarjeta al que tienes configurado. 
-    * **Si no te gusta estar cambiando los tipos de tarjetas** habrá que hacer algun que otro ajuste pero puedes utilizar solamente LEER y no usar el campo hiragana donde no haya kanji ([más abajo](#ajuste_diagrama) en diagrama explicaré un pequeño ajuste que podeis hacer si quereis en este caso, aunque echale un vistazo a Audio para ver también una desventaja de hacerlo)
+    * **Si no te gusta estar cambiando los tipos de tarjetas** habrá que hacer algun que otro ajuste pero perfectamente puedes utilizar solamente **LEER** y usar Palabra para todo
+    
+    [Más abajo](#ajuste_diagrama) en diagrama explicaré un pequeño ajuste que puede que querais aplicar en este caso. Usar solo **LEER** también tiene desventajas por ejemplo en Audio se explica una de ellas.
+
+* **Hiragana**: se llama así pero en realidad es para escribir en hiragana o katakana la lectura de la palabra.  
 
 * **Alternativas**: si la palabra tiene otras formas de escribirse o pronunciarse puedes indicarlas aquí. Estarán menos destacadas que la principal pero justo debajo de ella.
 
@@ -88,8 +89,9 @@ Algunos campos no necesitan explicación porque son literales.
 
 * **No Confundir**: este campo lo terminé agregando porque usaba notas para eso y me parecía que no le correspondía.
     * Es un campo que solo se ve en el back por conveniencia.
-    * Muchas veces habrá palabras o kanji.. que confundas unos con otros. Para enfrentarte a ellas puedes poner en las dos tarjetas algo como "昨日・昨今" y si te sigues confundiendo puedes copiarlo rápidamente y pegarlo en el buscador para encontrar todo el grupo de tarjetas y no tener que estar buscandolas una a una, y luego reiniciarlas o hacer lo que necesites con ellas. Es un campo muy util.
-
+    * Muchas veces habrá palabras o kanji.. que confundas unos con otros. Para enfrentarte a ellas puedes poner en las dos tarjetas algo como "昨日・昨今" y si te sigues confundiendo puedes copiarlo rápidamente y pegarlo en el buscador para encontrar todo el grupo de tarjetas y no tener que estar buscandolas una a una, y luego reiniciarlas o hacer lo que necesites con ellas. Es un campo muy util.  
+  
+&nbsp;
 * **Notas**: anotaciones extra que no encajen en ningun otro campo. Aunque para esto también puedes usar contenido oculto.
 
 * **Audio**: este campo es más interesante de lo que parece. Lo suyo es que con un programa como yomichan puedas añadir a tu vocabulario las pronunciaciones de las palabras y una vez lo tienes..
@@ -106,7 +108,7 @@ Algunos campos no necesitan explicación porque son literales.
 **Ajuste si solo vas a utilizar LEER y no DE_KANA:** Es posible que te moleste que se vea el stroke order de todo el hiragana que aparece en palabra, en ese caso es muy facil **pero no te olvides de copiar el código a un block de notas por si haces algo mal**:<br><br>
 En el buscador de Anki encuentra cualquier tarjeta que use la plantilla LEER y arriba de los campos verás un botón que pone Tarjetas (<u>imagen1</u>) le das y verás el código de la plantilla. <br><br>
 Tienes que editar el Back Template y borrar la parte que esta entre \{\{^Diagrama\}\} y \{\{/Diagrama\}\} (<u>imagen2</u>).<br><br>
-Solo quedaría guardar los cambios.
+Solo quedaría guardar los cambios.  
 
 ![Tarjeta de Kanji (Kanjis Sueltos)](/assets/img/posts/anki_templates/quitar_diagrama_selectivo2.png){: .small_image :}
 ![Tarjeta de Kanji (Kanjis Sueltos)](/assets/img/posts/anki_templates/quitar_diagrama_selectivo.png){: .small_image :}
@@ -115,6 +117,10 @@ Solo quedaría guardar los cambios.
     * Puedes usarlo para guardar todo lo que no encaje en el resto de campos.
     * También puedes guardar contenido que no quieres que vean los demás como por ejemplo información más personal, esto te va a permitir por ejemplo streamear sin mostrar cosas que no quieres que vean los demás. Seguro que le sacais un buen provecho.
 
+
+{: .box-note}
+**Nota**: Los campos **Hiragana** y **Diagrama** se incluyen también en las plantillas **DE_KANA** y **A_KANA** pero no se ven en las reviews (son campos mininimizados abajo de todos los demás).<br><br>
+Los motivos son por seguridad y comodidad, si por error error haces un cambio de tipo de tarjeta de por ejemplo de **LEER** a **DE_KANA** no vas a perder ninguna información y simplemente convirtiendo las tarjetas de vuelta a **LEER** podrás revertir los cambios.
 
 #### Funciones extendidas
 He incluido a las plantillas algunas caracteristicas muy interesantes que os voy contar a continuación:

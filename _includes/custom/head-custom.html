@@ -1,6 +1,5 @@
 {% if page.layout == "placeholder" %}
     {% assign reasign_url = page.traducciones[0] | append: page.url | absolute_url %}
-    {{reasign_url}}
     <meta http-equiv="refresh" content="0; URL={{ reasign_url }}" />
     <meta name="robots" content="noindex">
 {% endif %}

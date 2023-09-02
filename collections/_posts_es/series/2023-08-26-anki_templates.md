@@ -79,33 +79,30 @@ Algunos campos no necesitan explicación porque son literales.
 
 * **Alternativas**: si la palabra tiene otras formas de escribirse o pronunciarse puedes indicarlas aquí. Estarán menos destacadas que la principal pero justo debajo de ella.
 
-* **Significado**: significado no japonés básicamente. Puedes utilizarlo también para poner el significado Japonés ya que la presentación es un poco diferente. A tu gusto.
+* **Significado**: significado no japonés pero puedes usarlo para destacar algún significado también. A tu gusto.
 
 * **Significado Japones**: aparece en un recuadro blanco estilizado que está muy bien.
 
-* **Notas Visibles**: se usa para poner avisos principalmente, como por ejemplo cuando tienes una palabra que se pronucia de dos formas diferentes y quieres aclarar cual de las dos es.
+* **Notas Visibles**: lo uso para mostrar avisos en el **front**. Por ejemplo cuando tienes una palabra que se escribe igual pero tiene pronunciaciones diferentes que quieres recordar (esto en concreto también lo puedes hacer esto con frases visibles y contexto)
 
-* **Frases Visibles y Frases**: hay dos campos porque muchas veces te interesará que se vean las frases y otras muchas no. Por ejemplo muchas frases te chivan cosas que no quieres y otras muchas será al reves, querras ver la frase para aclarar la palabra (como cuando pones una nota en notas visibles).
+* **Frases Visibles y Frases**: hay dos campos porque muchas veces te interesará que se vean las frases en el **front** y otras muchas no.
 
-* **No Confundir**: este campo lo terminé agregando porque usaba notas para eso y me parecía que no le correspondía.
-    * Es un campo que solo se ve en el back por conveniencia.
-    * Muchas veces habrá palabras o kanji.. que confundas unos con otros. Para enfrentarte a ellas puedes poner en las dos tarjetas algo como "昨日・昨今" y si te sigues confundiendo puedes copiarlo rápidamente y pegarlo en el buscador para encontrar todo el grupo de tarjetas y no tener que estar buscandolas una a una, y luego reiniciarlas o hacer lo que necesites con ellas. Es un campo muy util.  
-  
-&nbsp;
-* **Notas**: anotaciones extra que no encajen en ningun otro campo. Aunque para esto también puedes usar contenido oculto.
+* **No Confundir**: este campo lo terminé agregando porque usaba el campo de las notas para eso y la verdad es que el campo notas me gusta que sea independiente.<br><br>Solo se ve en el back y sirve para poner algo como "昨日・昨今" en ambas tarjetas, así si confundes una palabra con otra podrás encontrar ambas rápidamente.
 
-* **Audio**: este campo es más interesante de lo que parece. Lo suyo es que con un programa como yomichan puedas añadir a tu vocabulario las pronunciaciones de las palabras y una vez lo tienes..
-    * LEER: aquí el audio se escucha al pasar la palabra para hacerte una idea de como suena (100% recomendado).
-    * ESCRIBIR: como en las tarjetas de handwriting solo ves el hiragana es posible que muchas palabras se escriban igual pero muchas veces se pronuncian distinto así que como ayuda el Audio se escucha en el Frente y no en el Back.
-    * DE_KANA: el audio se escucha en el frente como ayuda para que no tengas que pensar tanto en leer la palabra/gramática .. etc sino en su significado (que es para lo que se suele usar esta tarjeta)
-    * A_KANA: se escucha en el frente como LEER
+* **Notas**: este campo es para poner todo aquello que necesites relacionado con la palabra que no encaje en ningun otro campo.
 
-* **Imagenes**: las imagenes las puedes pegar en cualquier otro campo pero a veces molestan o no destacan demasiado así que cree este campo que es más grande y aparece debajo de las notas.
+* **Audio**: este campo es más interesante de lo que parece. Con programas como yomichan puedes añadir a las tarjetas las pronunciaciones de la palabra y dependiendo del tipo de tarjeta se este audio se escuchará en el **front** o en el **back**.
+    * LEER: se escucha en el **back**.
+    * ESCRIBIR: se escucha en el **front** y ayuda un montón a saber que es lo que tienes que escribir.
+    * DE_KANA: se escucha en el **front** ya que en estas tarjetas normalmente lo que tienes que recordar es el significado.
+    * A_KANA: se escucha en el **back**.
 
-* **Diagrama**: aquí aparecerá lo que pongas en el pero lo suyo es que uses un plugin para anki como [Kanji Colorizer (stroke order diagrams)](https://ankiweb.net/shared/info/1964372878). Si no pones nada cogerá lo que haya en palabra y con una fuente especial mostrará el stroke order sin problemas pero no se verá tan bonito.<a name="ajuste_diagrama"></a>
+* **Imagenes**: es un campo para que las imagenes tengan su propia sección, antes usaba el campo **notas** para esto pero era muy incomodo cuando quería añadir anotaciones también. Centra el texto por defecto e intenta ordenar las imagenes en horizontal si es que caben pero siempre puedes añadir saltos de linea.
+
+* **Diagrama**: Puedes usar plugins bonitos como [Kanji Colorizer (stroke order diagrams)](https://ankiweb.net/shared/info/1964372878) para añadir el stroke order de los kanji. En caso de no agregar nada aparecerá el stroke order de todas formas con una fuente especial para ello.<a name="ajuste_diagrama"></a>
 
 {: .box-note}
-**Ajuste si solo vas a utilizar LEER y no DE_KANA:** Es posible que te moleste que se vea el stroke order de todo el hiragana que aparece en palabra, en ese caso es muy facil **pero no te olvides de copiar el código a un block de notas por si haces algo mal**:<br><br>
+**Ajuste si solo vas a usar la plantilla leer LEER como sustitución a DE_KANA:** Si te molesta que Diagrama te generé el stroke order para las palabras tarjetas que no usan kanji (como すんな) puedes desactivar esta funcion tu mismo, solo **no te olvides de copiar el código que vas a editar a un block de notas por si rompes algo**:<br><br>
 En el buscador de Anki encuentra cualquier tarjeta que use la plantilla LEER y arriba de los campos verás un botón que pone Tarjetas (<u>imagen1</u>) le das y verás el código de la plantilla. <br><br>
 Tienes que editar el Back Template y borrar la parte que esta entre \{\{^Diagrama\}\} y \{\{/Diagrama\}\} (<u>imagen2</u>).<br><br>
 Solo quedaría guardar los cambios.  
@@ -113,10 +110,12 @@ Solo quedaría guardar los cambios.
 ![Tarjeta de Kanji (Kanjis Sueltos)](/assets/img/posts/anki_templates/quitar_diagrama_selectivo2.png){: .small_image :}
 ![Tarjeta de Kanji (Kanjis Sueltos)](/assets/img/posts/anki_templates/quitar_diagrama_selectivo.png){: .small_image :}
 
-* **Contenido Oculto**: al igual que no confundir esta es mi nueva joya. El campo aparece oculto por defecto, y sirve para poner cualquier cosa que no quieras que se vea directamente. 
+* **Contenido Oculto**: al igual que no confundir esta es mi nueva joya. El campo aparece oculto por defecto y sirve para poner cualquier cosa que no quieras que se vea directamente. 
     * Puedes usarlo para guardar todo lo que no encaje en el resto de campos.
-    * También puedes guardar contenido que no quieres que vean los demás como por ejemplo información más personal, esto te va a permitir por ejemplo streamear sin mostrar cosas que no quieres que vean los demás. Seguro que le sacais un buen provecho.
+    * También puedes guardar contenido que no quieres que vean los demás como por ejemplo información más personal, esto te va a permitir por ejemplo streamear sin mostrar cosas que no quieres que vean los demás.
+    * Otro uso sería que si por ejemplo quereis compartir algunas tarjetas pues sabreis donde está exactamente que es lo que no quereis compartir.
 
+    Seguro que le sacais un buen provecho.
 
 {: .box-note}
 **Nota**: Los campos **Hiragana** y **Diagrama** se incluyen también en las plantillas **DE_KANA** y **A_KANA** pero no se ven en las reviews (son campos mininimizados abajo de todos los demás).<br><br>
@@ -136,11 +135,11 @@ Suponiendo que la palabra fuera 瀞 podeis dar click con la rueda del raton a lo
 * [画像](https://www.google.com/search?tbm=isch&q=%E7%80%9E) busca imagenes
 * [画像とは](https://www.google.com/search?tbm=isch&q=%E7%80%9E%E3%81%A8%E3%81%AF) busca imagenes con とは (enfatiza el significado)
 * [Google](https://www.google.com/search?q=%E7%80%9E%E3%81%A8%E3%81%AF) busca con とは en google (para saber que significa)
-* [NIAI](https://niai.mrahhal.net/similar?q=%E7%80%9E) (normalmente para kanji) útil para kanken
+* [NIAI](https://niai.mrahhal.net/similar?q=%E7%80%9E) busca kanji que son parecidos por usar los mismos radicales (útil para kanken)
 * [goo](https://dictionary.goo.ne.jp/word/%E7%80%9E/) si te gusta goo puedes acceder directamente a el
 * 単語をコピー: copia la palabra
 * [Jisho](https://jisho.org/search/%E7%80%9E) ya la conoceis
-* [例文](https://www.google.com/search?q=%E7%80%9E%E3%81%AE%E4%BE%8B%E6%96%87) busqueda en google de frases de ejemplo
+* [例文](https://www.google.com/search?q=%E7%80%9E%E3%81%AE%E4%BE%8B%E6%96%87) busqueda en google de frases de ejemplo (の例文)
 
 
 

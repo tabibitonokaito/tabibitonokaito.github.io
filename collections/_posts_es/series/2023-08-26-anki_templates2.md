@@ -14,9 +14,12 @@ series: [2,3]
 header_blackbox: true
 
 tags: [anki]
-comments: false
+comments: true
 
 ---
+
+{: .box-warning}
+**Por revisar:** He sacado este artículo lo más rápidamente posible por lo que no esta revisada la ortografía ni nada, en serio que voy a estar muy ocupado estos días. Nada más que pueda la voy a ir revisando poco a poco, pero al menos ya podeis descargar las plantillas. **Espero que os sean de mucha ayuda**.
 
 Normalmente sería sencillo instalar plantillas (y lo es) pero las fuentes no me pertenecen, se tienen que instalar cosas en un orden concreto, sobre todo con las fuentes.
 

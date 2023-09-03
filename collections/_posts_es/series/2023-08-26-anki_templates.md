@@ -14,7 +14,7 @@ series: [1,3]
 header_blackbox: true
 
 tags: [anki]
-comments: false
+comments: true
 
 ---
 
@@ -145,48 +145,67 @@ Suponiendo que la palabra fuera 瀞 podeis dar click con la rueda del raton a lo
 
 
 
-* **Descenso de brillo en las imagenes**: con esto se acabo el problema de coger fotos con fondo blanco ya que no te van a molestar a la vista, la plantilla en si es más o menos blanca pero está más o menos pensada para no afectarte a la vista.
+* **Filtro que reduce el brillo de las imagenes**: aunque la plantilla sea casi blanca las imagenes con fondos totalmente blancos seguían siendo molestas a la vista pero con esto ya se acabo el problema. Si quieres ver la imagen en color original puedes poner el puntero del raton encima.
 
-![Efecto de Brillo](/assets/img/posts/anki_templates/anki_98jCjfLPQG.gif)
+![Los las imagenes con texto y fondo blanco no parecen imagenes](/assets/img/posts/anki_templates/anki_98jCjfLPQG.gif)
 
-Si, eso es una imagen. Como detalle la mayoría de las páginas web si son blancas y este efecto acomoda el color blanco a la plantilla haciendo que parezca texto normal.
+* **Estilos predefinidos para el campo Hiragana** (también foto de arriba) Puedes usar negrita, subscript .. etc para usar unos estilos predefinidos en el campo hiragana. Esto viene de perlas para las tarjetas de kanji individuales.
 
-* **Estilos especiales para el campo Hiragana** esto normalmente también dificulta la busqueda de las palabras al buscar por hiragana al igual que por ejemplo añadir ・ para separar el hiragana (cosa que hago en todas las palabras) lo digo para tenerlo en cuenta. Así que esto es útil dependiendo de cada uno, para lo que si es útil 100% es para las tarjetas de kanji suelto usando LEER. Podeis ver como queda en la foto de arriba.
+    * **imagenes**: tienen un tamaño automático que está definido por css para ajustarse al texto, empujan muy poquito (2px) el texto a la derecha. En la imagen podeis ver **外** que especifica pronunciaciones que están fuera del kanken.
 
-    * **imagenes**: tienen un tamaño automático que está definido por css para ajustarse al texto, empujan muy poquito (2px) el texto a la derecha. En la imagen podeis ver 外 que especifica pronunciaciones fuera del 漢検 si no me equivoco.
+    * **superscript**: pone el texto de color naranja. Lo uso para especificar que es una pronunciación que solo he visto en nombres.
 
-    * **superscript**: pinta el texto en naranj. Lo uso para especificar que aunque la pronunciación no se usa en ninguna palabra, si que se usa en nombres.
+    * **subscript**: pone el texto de un color rojo que no destaca mucho. Lo uso para indicar pronunciaciones que son del kanji pero que no se encuentran en ninguna parte, ni en palabras, ni nombres, ni nada, solo aparecen en diccionarios.
 
-    * **subscript**: pinta el texto en un rojo que no destaca mucho. Lo uso para indicar pronunciaciones que son del kanji pero que no se encuentrarn en ninguna parte, ni en palabras, ni nombres ni nada.
+    * **subrayado**: pone el texto de color azul. La pronunciación no aparece en el diccionario pero si se usa. 
 
-    * **subrayado**: pinta el texto en azul. La pronunciación no aparece en el diccionario pero si se usa. 
-
-    * **negrita**: pinta el texto en rosita. Es una pronunciación 常用漢字.
+    * **negrita**: pone el texto de color rosita. Es una pronunciación 常用漢字.
     
     * **cursiva**: oscurece el texto sea del color que sea, por ejemplo para destacar que pronunciación entra dentro del kanji Ejemplo: 食べる (**た**べる).
 
-    Con eso más o menos estaría todo. En futuras plantillas mejoraré este sistema para que se pueda desactivar más comodamente o activar en cualquier campo (o elemento html creado con el editor).
+    {: .box-note}
+**Nota** puedes desactivar los estilos predefinidos agregando la clase "**no**" a cada elemento (usando el editor html).
 
-{: .box-note}
-**Nota** también se puedes recuperar los usos normales de negrita, cursiva, etc agregandoles la clase .no (usando el editor html).
+    En siguientes versiones mejoraré los estilos predefinidos para que se puedan desactivar más comodamente y además que se puedan activar en cualquier otro campo que no sea hiragana.
 
-* **BLUR**: como no podía faltar este es otro sistema para ocultar contenido.
+
+* **BLUR**: por si fuera poco con el campo **Contenido Oculto** oculto este es otro sistema para ocultar contenido.
     * Aplica un blur a tus imagenes/texto o cualquier elemento o grupo de elementos html.
     * Da click al elemento con blur para turnar el blur on<->off
     * Decide que tanto se difumina el contenido entre una gran variedad de grados.
 
-    * **Forma de uso** Tienes que agregar un \<div\> padre que contenga la imagen o el texto que quieras ocultar. Puedes meter más de una imagen pero al hacer click se turnara todo lo que hayas metido en cada uno de estos divs independientes.
-
-      * Agrega la clase **blur** al div padre.
-      * **Clase variable** (hay que especificarla también): dependiendo de cuanto quieras que se difumine el contenido tienes que elegir uno de los siguientes (menor a mayor intensidad) n h hh hhh hhhh hhhhh x xx xxx xxxx xxxxx 
+    * **¿Cómo se usa?** 
+        1. Se agrega un \<div class="blur **CLASE**"\> padre que contenga la imagen o en general cualquier elemento o grupo de elementos html a los que quieras aplicar un blur inicial.
+        1. **CLASE** en lugar de **CLASE** hay que elegir entre **n h hh hhh hhhh hhhhh x xx xxx xxxx xxxxx**  dependiendo de que tan potente quieres que sea el blur. 
+        
+    El siguiente código ocultará tanto la imagen como el texto y al hacer click a cualquiera de los dos se mostrarán ambos (porque están dentro del mismo div padre). El texto debería ser intangible (porque a poco blur que le pongas a un texto no se podrá leer) pero la imagen se solo se verá un poco borrosa.
+    ```html
+    <div class="blur n">  
+        Mi Imagen Oculta<br>  
+        <img src="mi_imagen.png">  
+    </div>
+    ```
     
 {: .box-note}
-**Nota** el div blur tiene estilos para ser un elemento en linea, es decir: si pones varios div juntos se verán uno a la derecha del otro a menos que no quepan más.
-Si quieres aplicar separarlos por lineas agrega un \<br\>\.
+**Notas:**<br>los div blur son elementos en linea así que se si caben se pondrán unos al lado de otros, si quieres un salto de linea entre dos blur tendrás añadir un \<br\>\.
 
 ![Funcion de Blur](/assets/img/posts/anki_templates/blur_gif.gif)
 
-* Funciones que estan medio-incluidas (se instalan a parte de la plantilla pero están configuradas)
-    * **Fuente Principal**: La fuente principal, la de Palabra se verá igual en el móvil (algo más importante de lo que puede parecer). El resto de fuentes depende de tu sistema operativo pero se verán o igual o casi igual.
+* Funciones que medio-incluidas (se instalan a parte de la plantilla pero están configuradas)
+    * **Fuente Principal**: La fuente principal de **Palabra** está configurada para que se vea igual en cualquier dispositivo (incluso si no tiene instalada la fuente).
 
-    * **Fuente para orden de trazos** Si no utilizas addon para crear imagenes con el orden de trazos como el mencionado [Kanji Colorizer (stroke order diagrams)](https://ankiweb.net/shared/info/1964372878) podréis ver aun así el orden de trazos en las tarjetas de tipo LEER y ESCRIBIR.
+    * **Fuente para orden de trazos** Si no utilizas un addon para crear imagenes con el orden de trazos como el mencionado [Kanji Colorizer (stroke order diagrams)](https://ankiweb.net/shared/info/1964372878) podréis ver aun así el orden de trazos en las tarjetas de tipo LEER y ESCRIBIR (en cualquier dispositivo también). 
+    
+    {: .box-note}
+    Si no se ven los trazos de algun kanji es porque seguramente no forma parte del kanken y aunque usarás el Kanji Colorizer seguramente tampoco obtendrías el orden de trazos.
+
+Para el resto de fuentes la fuente dependerá del sistema en el que ejecutes anki, pero no debería ser un problema ya que donde es realmente molesto es en Palabra. Además debería de verse prácticamente igual. 
+
+#### ¿Por no se ha configurado para que las fuentes se vean igual en todos los dispositivos?
+El motivo es que cargar fuentes ralentiza la carga de las tarjetas durante las reviews (como detalle añadir imagenes grandes también ralentiza la carga de las tarjetas).
+
+En mi móvil con estas dos que he elegido no tengo casi latencia pero añadir una tercerá si es un problema. Mi móvil no es que sea muy bueno pero eso lo convierte en un buen estandar porque si va bien en mi móvil va bien el móvil debería ir bien en el móvil promedio tiene un móvil antiguo también debería irle bien.
+
+También podría usar la fuente de Palabra para todo pero es que la verdad es que esta fuente se ve muy bien en ese campo pero no en los demás y lo mismo pasa al reves.
+
+De todas formas en futuras versiones incluiré una optimización para que todo pase primero por Javascript y haré que lo que se tenga que ver rápido se muestre rapido pero secciones como Imagenes o Diagrama aparecerán lo más rápidamente posible pero después. Además todas las fuentes estarán incluidas para no depender del sistema operativo.

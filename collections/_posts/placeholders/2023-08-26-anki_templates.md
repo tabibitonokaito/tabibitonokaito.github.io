@@ -12,7 +12,7 @@ cover-img: /assets/img/posts/anki_templates/banner.avif
 thumbnail-img: /assets/img/posts/anki_templates/box.png
 share-img: /assets/img/posts/anki_templates/box.png
 
-traducciones: ['es']
+traducciones: ['en','es']
 tags: [anki]
 
 ---

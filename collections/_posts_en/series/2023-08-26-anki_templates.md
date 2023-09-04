@@ -20,10 +20,15 @@ comments: false
 
 
 
-In this article, I'm going to share the templates I've created for studying Japanese. There are four in total: **LEER** (READING), **ESCRIBIR** (WRITING), **DE_KANA** (FROM_KANA), and **A_KANA** (TO_KANA).
+In this article, I'm going to share the templates I've created for studying Japanese. There are four in total..
+
+**LEER** (READING), **ESCRIBIR** (WRITING), **DE_KANA** (FROM_KANA), and **A_KANA** (TO_KANA).
 
 {: .box-error}
-This section is still under revision and Part2/Part3 of this article still aren't avaliable in English.
+{% assign url2 = 'es/anki_templates2' | absolute_url %}
+{% assign url1 = 'es/anki_templates1' | absolute_url %}
+
+This section was traslated by AI and is still under revision. [Second Part]({{ 'es/anki_templates2' | absolute_url }}) and [Third Part]({{ 'es/anki_templates3' | absolute_url }}) of this article still aren't avaliable in English.
 
 {: .box-warning}
 **Updates**: When there are updates or new templates, I will use this box to notify you. If you happen to lose the link to this blog or this article, you can find it below the templates ([see image](/assets/img/posts/anki_templates/footer_sign.avif)).<br><br>

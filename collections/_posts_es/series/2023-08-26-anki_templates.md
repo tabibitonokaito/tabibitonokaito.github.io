@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Japanese Anki Themes by Kaito
-subtitle: All you need for studying Japanese using Anki
+title:  Plantillas de Anki by Kaito
+subtitle: Todo lo que necesitas para estudiar Japonés con Anki
 
 cover-img: /assets/img/posts/anki_templates/banner.avif
 thumbnail-img: /assets/img/posts/anki_templates/box.png

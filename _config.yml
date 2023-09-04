@@ -26,6 +26,7 @@ author: 少海翔
 
 navbar-links:
   Tags: "tags"
+  Spam: "spam"
 
 ################
 # --- Logo --- #
@@ -128,7 +129,13 @@ collections_dir: collections
 collections:
   pages:
     output: true
-    permalink: /:collection/:title/
+    permalink: pages/:title/
+  pages_en:
+    output: true
+    permalink: /:categories/pages/:title/
+  pages_es:
+    output: true
+    permalink: /:categories/pages/:title/
   posts_en:
     output: true
     permalink: /:categories/:title/
@@ -274,6 +281,7 @@ timezone: "America/Toronto"
 markdown: kramdown
 highlighter: rouge
 permalink: /:title/
+categories: ['jp']
 paginate: 5
 
 kramdown:

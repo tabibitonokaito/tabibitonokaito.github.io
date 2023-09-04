@@ -14,7 +14,7 @@ series: [3,3]
 header_blackbox: true
 
 tags: [anki]
-comments: true
+comments: false
 
 ---
 

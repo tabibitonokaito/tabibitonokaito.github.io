@@ -251,7 +251,7 @@ giscus:
   category: Announcements # Category name of your GitHub Discussion posts
   category-id: DIC_kwDOKNIjLs4CZD5o # ID of your category, retrieve this info from https://giscus.app
   mapping: pathname
-  reactions-enabled: 1
+  reactions-enabled: 1 # Desactivar si hay malos comentarios
   emit-metadata: 0
   theme: light
 
